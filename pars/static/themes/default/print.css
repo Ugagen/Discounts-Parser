@@ -1,0 +1,20 @@
+#footer {
+	position:static;
+}
+
+.footer-section,
+#sidebar,
+#header,
+#util-menu,
+#djangopress-toolbar {
+	display:none;
+}
+
+#footer-copyright {
+	display:block;
+}
+
+#wrapper {
+	max-width:100%;
+	padding:0;
+}

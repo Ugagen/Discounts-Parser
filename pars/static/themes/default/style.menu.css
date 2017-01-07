@@ -1,0 +1,229 @@
+/* generic styleing for the menu */
+
+.fly-out-menu {
+    margin:0 auto;
+    width:100%;
+    line-height:32px;
+    position:relative;
+    z-index:2;
+}
+.fly-out-menu ul {
+    padding:0;
+    margin:0;
+    list-style-type:none;
+}
+.fly-out-menu a:active {
+    text-decoration:underline;
+}
+.fly-out-menu ul li {
+    position:relative;
+    line-height:32px;
+}
+
+.fly-out-menu ul li a {
+    font-size:0.85em;
+    color:#fff;
+    text-decoration:none;
+    transition: all 0.2s linear;
+}
+.fly-out-menu ul li ul {
+    opacity:0;
+    visibility:collapse;
+    position:absolute;
+}
+
+/* top level menu item */
+.fly-out-menu .horizontal > li {
+    float:left;
+    display:block;
+    width:155px;
+    text-shadow: #000000 1px 1px 1px;
+    text-align:center;
+    line-height:30px;
+    margin:2px;
+
+    background:rgba(0, 0, 0, 0.0);
+    border-radius:3px 3px 0 0;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0;
+}
+.fly-out-menu .horizontal > li.focused,
+.fly-out-menu .horizontal > li:hover {
+    cursor:pointer;
+    box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.fly-out-menu .horizontal > li.has-submenu:after {
+   content: "▼";
+   display: block;
+   text-shadow: none;
+   position:absolute;
+   color:#fff;
+   font-size:5px;
+   top:1px;
+   right:10px;
+}
+
+.fly-out-menu .vertical > li.has-submenu:after {
+   content: "▶";
+   display: block;
+   text-shadow: none;
+   position:absolute;
+   color:#fff;
+   font-size:5px;
+   top:1px;
+   right:10px;
+}
+
+.fly-out-menu .horizontal .focused.has-submenu:hover:after {
+	text-shadow: #000000 0px 1px 2px;
+}
+
+/* styles for the sub menus */
+.fly-out-menu .horizontal li ul {
+	width:155px;
+	margin-left:-1px; /* because of the border */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius:0 0 4px 4px; 
+    background: rgba(14, 18, 12, 0.9);
+}
+
+.fly-out-menu .horizontal li ul li {
+    float:none;
+    text-align:left;
+    text-shadow: #000000 1px 1px 3px;
+    padding:8px 0;
+    transition: background 0.4s linear;
+}
+.fly-out-menu .horizontal li ul li a {
+    display:block;
+    padding:0 8px;
+    line-height:16px;
+}
+
+.fly-out-menu .horizontal li ul .focused,
+.fly-out-menu .horizontal li ul li:hover {
+    background: rgba(6, 8, 5, 0.95);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    margin:0 -1px;
+}
+.fly-out-menu .horizontal li ul .last-item,
+.fly-out-menu .horizontal li ul li:last-child  {
+    border-radius:0 0 4px 4px; 
+}
+
+.fly-out-menu .horizontal li ul ul,
+.fly-out-menu .horizontal li ul ul .last-item,
+.fly-out-menu .horizontal li ul ul li:last-child {
+	border-radius:4px; 
+}
+
+/*
+.fly-out-menu .horizontal li ul .last-item.focused,
+.fly-out-menu .horizontal li ul li:last-child:hover {
+    background-position: -160px bottom;
+}
+.fly-out-menu .horizontal li ul ul .first-item,
+.fly-out-menu .horizontal li ul ul li:first-child {
+    background-position: 0px top;
+}
+.fly-out-menu .horizontal li ul ul .first-item.focused,
+.fly-out-menu .horizontal li ul ul li:first-child:hover {
+    background-position: -160px top;
+}*/
+
+/* for those menus with sub menus */
+/*
+.fly-out-menu .horizontal li ul .has-submenu {
+    background-position: -320px center;
+}
+.fly-out-menu .horizontal li ul .has-submenu.focused {
+    background-position: -480px center;
+}
+.fly-out-menu .horizontal li ul ul .has-submenu.first-item {
+    background-position: -320px top;
+}
+.fly-out-menu .horizontal li ul ul .has-submenu.focused.first-item {
+    background-position: -480px top;
+}
+.fly-out-menu .horizontal li ul .has-submenu.last-item {
+    background-position: -320px bottom;
+}
+.fly-out-menu .horizontal li ul .has-submenu.focused.last-item {
+    background-position: -480px bottom;
+}
+*/
+
+.fly-out-menu .focused > a,
+.fly-out-menu li:hover > a {
+    text-decoration:underline;
+    outline:0px; /* the underline should made the outline unneeded */
+}
+
+.fly-out-menu .horizontal > .focused > a,
+.fly-out-menu .horizontal > li:hover > a {
+    color:#1d2419;
+    text-shadow: none;
+    text-decoration:none;
+}
+
+.fly-out-menu ul.horizontal > li > ul {
+	transform: scaleY(0);
+	transform-origin: top;
+}
+.fly-out-menu ul.horizontal > li.open > ul {
+    margin-top:0px;
+    opacity:1;
+    position:absolute;
+    left:0px;
+    top:100%;
+    visibility:visible;
+    opacity:1;
+    transform: scaleY(1);
+    transition: opacity 0.4s linear, transform .2s linear;
+}
+
+.fly-out-menu ul.vertical > li > ul {
+	transform: scaleX(0);
+}
+
+.fly-out-menu ul.vertical > li.open-right > ul {
+    position:absolute;
+    top:-1px;
+    left:100%;
+    margin-left:0;
+    opacity:1;
+    visibility:visible;
+    transform: scaleX(1);
+    transition: opacity 0.4s linear, transform .2s linear;
+    transform-origin: left;
+}
+.fly-out-menu ul.vertical > li.open-left > ul {
+    position:absolute;
+    top:-1px;
+    left:-100%;
+    margin-right:0;
+    opacity:1;
+    visibility:visible;
+    transform: scaleX(1);
+    transform-origin: right;
+}
+/* style rules used just when there is no JavaScript enabled.
+   very minimlist with few features.  Will not work in IE 6 */
+
+.css-fly-out-menu ul ul li:hover > ul {
+    display:block;
+    position:absolute;
+    top:-1px;
+    left:100%;
+    margin-left:-5px;
+}
+.css-fly-out-menu .horizontal > li:hover > ul {
+    display:block;
+    position:absolute;
+    left:0px;
+    top:100%;
+}
+

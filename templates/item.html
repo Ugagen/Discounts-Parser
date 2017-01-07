@@ -1,0 +1,48 @@
+
+
+{% load static from staticfiles %}
+<script src="{% static "js/common.js" %}"></script>
+{% load default %}
+{% spaceless %}
+
+    {% for sale in sale_list %}
+
+        <div class="element">
+          <h3>{{ sale.name }}</h3>
+          <div><p>By {{ sale.artist }}</p></div>
+
+          <div><p>Rating:
+
+          {% for _ in sale.star|times %}
+          <span class="star on">☆</span>
+          {% endfor %}
+          {% if sale.halfstar == 1 %}
+          <span class="star half">☆</span>
+          {% endif %}
+          {% for _ in sale.star|star:sale.halfstar %}
+          <span class="star">☆</span>
+          {% endfor %}
+          <span class="salerating">{{ sale.rating }}</span>
+          </p></div>
+          {% if sale.price == 0.0 %}
+          <div><p>Price: FREE</p/></div>
+          {% else %}
+          <div><p>Price: ${{ sale.price }}</p/></div>
+          {% endif %}
+          <div><input type="button" target="_blank" onclick="window.open('{{ sale.url }}');" value="Download" /></div>
+          <div class="accordion">
+            <h3>Description</h3>
+            <div><p class ="description">{{ sale.description }}</p></div>
+          </div>
+          <div class="conteiner">
+            {% for screenshot in sale.screenshots|toList %}
+              <div class="img"><img class="screenshot" src="{{ screenshot }}" />&nbsp;</div>
+            {% endfor %}
+            <div class="clear"></div>
+          </div>
+
+        </div>
+
+    {% endfor %}
+
+{% endspaceless %}

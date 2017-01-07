@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+
+
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <title>
+Discounts Studio
+</title>
+{% load static from staticfiles %}
+
+<link rel="stylesheet" href="{% static "smoothness/jquery-ui.css" %}">
+<link rel="stylesheet" href="{% static "css/common.css" %}">
+<script type="text/javascript" src="{% static "smoothness/external/jquery/jquery.js" %}"></script>
+<script type="text/javascript" src="{% static "smoothness/jquery-ui.js" %}"></script>
+<script type="text/javascript" src="{% static "js/common.js" %}"></script>
+
+
+</head>
+{% spaceless %}
+<body>
+
+<div class="tabs">
+  <ul>
+    {% for section in sections %}
+      <li><a href="/{{ section }}">{{ section }}</a></li>
+    {% endfor %}
+  </ul>
+<p class="copyright">© 2015 Andrey Krasnikov</p>
+</div>
+
+</body>
+{% endspaceless %}
+</html>

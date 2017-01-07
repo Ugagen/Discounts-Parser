@@ -1,0 +1,98 @@
+#sidebar {
+    float:right;
+    margin-right:-250px;
+    width:250px;
+    margin-bottom:75px;
+    color:#ffffff;
+}
+
+.side-bar-content {
+    width:230px;
+    padding:4px;
+    margin:6px;
+    border:1px solid #97bc55;
+    border-radius:6px;
+    background-color:#71962f;
+    box-shadow:
+       0 0 0 1px rgba(0,0,0,0.5),
+       0 0 0 2px rgba(255,255,255,0.2);
+}
+
+
+/* the date object for something in the sidebar */
+
+.side-bar-item .date {
+    height:70px;
+    width:56px;
+    float:left;
+    display:block;
+    text-align:center;
+    font-family:sans-serif;
+    color:#ffffff;
+    margin:0.3em 0.3em 0;
+    background:url(images/date.png);
+    text-shadow: #000000 1px 1px 1px;
+    font-size:1.2em;
+}
+.side-bar-item .date .month {
+    display:block;
+    line-height:30px;
+}
+.side-bar-item .date .day {
+    display:block;
+    line-height:23px;
+}
+
+/* the search widget in the side bar */
+
+#search-sidebar {
+    height:45px;
+    width:230px;
+    padding:5px 10px 10px 10px;
+    margin-top:-1px;
+    /* position:relative; */
+    background:url(images/search.png) no-repeat;
+}
+#search {
+    margin-top:2px;
+    width:160px;
+    padding:0 35px;
+}
+#search label {
+    display:block;
+    color:#ffffff;
+    font-size:0.75em;
+    text-shadow: #000000 1px 1px 1px;
+}
+#search-controls {
+    position:relative;
+    background:#1d2419;
+    height:21px;
+    margin:2px;
+    border:1px solid #494f46;
+    border-radius:3px;
+    box-shadow: 0 0 0 1px #12160f;
+}
+#search input, #search button {
+    border:0px;
+    outline:0px;
+    margin:0;
+    background:transparent;
+    position:absolute;
+    height:25px;
+}
+
+#search #search-box {
+    line-height:25px;
+    padding:0 25px 0 3px;
+    min-width:100%;
+    max-width:100%;
+    left:0;    top:-2px;
+    color:#ffffff;
+    box-sizing: border-box;
+}
+#search #search-go {
+    width:25px;
+    padding:0;
+    right:0;    top:0;
+}

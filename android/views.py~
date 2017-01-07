@@ -1,0 +1,14 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.template import RequestContext, loader
+
+from .models import Sale
+
+# Create your views here.
+def index(request):
+    sale_list = Sale.objects
+    template = loader.get_template('Sale/index.html')
+    context = RequestContext(request, {
+        'sale_list': sale_list,
+    })
+    return HttpResponse(template.render(context))

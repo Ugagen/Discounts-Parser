@@ -1,0 +1,115 @@
+.container {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    -webkit-transform: translate(-50%,-50%); /* Safari and Chrome */
+    -moz-transform: translate(-50%,-50%); /* Firefox */
+    -ms-transform: translate(-50%,-50%); /* IE 9 */
+    -o-transform: translate(-50%,-50%); /* Opera */
+    transform: translate(-50%,-50%);
+}
+.img {
+    z-index: 0;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.img img {
+    position: relative;
+    border: none;
+
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+  	-moz-transition: all 1s ease; /* Firefox */
+  	-o-transition: all 1s ease; /* IE 9 */
+  	-ms-transition: all 1s ease; /* Opera */
+  	transition: all 1s ease;
+}
+.clear {
+    clear: both;
+}
+
+.screenshot {
+    width: 300px;
+    height: auto;
+    margin: 10px 10px;
+    position: relative;
+    border: none;
+    float: left;
+}
+.screenshot:hover {
+	z-index: 1;
+    -webkit-transform:scale(1.3); /* Safari and Chrome */
+    -moz-transform:scale(1.3); /* Firefox */
+    -ms-transform:scale(1.3); /* IE 9 */
+    -o-transform:scale(1.3); /* Opera */
+     transform:scale(1.3);
+}
+
+
+.element {
+    margin: 9px 0;
+    border: 3px solid #DDDDDD;
+    border-radius: 10px;
+}
+
+.element:hover > h3 {
+    border-bottom: solid #ece7e7;
+}
+.element:hover {
+    border: solid #ece7e7;
+}
+p {
+    margin: 10px 10px;
+}
+h3 {
+    text-align: center;
+    margin: 0px;
+    border-bottom: 3px solid #DDDDDD;
+}
+
+.star {
+    color: #ddd;
+    font-size: 1.5em;
+    position: relative;
+}
+.star.on:before {
+    text-shadow: 0 0 2px rgba(0,0,0,0.7);
+    color: #FDE16D;
+    content: '\2605'; /* Full star in UTF-8 */
+    position: absolute;
+    left: 0;
+}
+.star.half:before {
+    text-shadow: 0 0 2px rgba(0,0,0,0.7);
+    color: #FDE16D;
+    content: '\2605'; /* Full star in UTF-8 */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
+input {
+    margin: 10px
+}
+.tabs .ui-tabs-nav {
+    white-space: nowrap;
+    overflow: hidden;
+    /*text-align: center;*/
+}
+.tabs .ui-tabs-nav li {
+    display: inline-block;
+    overflow: hidden;
+    float: none;
+    vertical-align: bottom;
+}
+.tabs .ui-tabs-nav li:nth-last-child(1) {
+	right: 0px;
+}
+.description {
+    max-height: 400px;
+}
+.copyright {
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+{% load static from staticfiles %}
+<script src="{% static "js/common.js" %}"></script>
+{% spaceless %}
+<body>
+
+<div class="tabs">
+  <ul>
+    {% for date in dates %}
+      <li><a href="/Mac/date{{ date|date:"Y_m_d" }}">{{ date|date:"M d Y" }}</a></li>
+    {% endfor %}
+  </ul>
+
+</div>
+</body>
+{% endspaceless %}
+</html>
